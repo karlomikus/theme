@@ -4,12 +4,25 @@ Add theming support to your Laravel 5.* projects
 
 ## Install
 
-TODO
+``` bash
+$ composer require karlomikus/theme
+```
+
+or add TODO
 
 ## Usage
 
-TODO
+Set a required theme:
+
+``` php
+Theme::set('theme-namespace');
+```
 
 ## Changelog
 
 TODO
+
+## TODO
+
+- Remove dependency on file facade
+- Fix test to work
