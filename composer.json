@@ -1,0 +1,28 @@
+{
+    "name": "karlomikus/theme",
+    "description": "Add theming support to your Laravel 5.* projects",
+    "keywords": [
+        "theme",
+        "laravel",
+        "views"
+    ],
+    "homepage": "https://github.com/karlomikus/theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karlo Mikuš",
+            "email": "contact@karlomikus.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Karlomikus\\Theme\\": "src/Theme"
+        }
+    }
+}
