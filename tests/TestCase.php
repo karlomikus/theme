@@ -2,7 +2,7 @@
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
-	protected $baseUrl = 'http://comet.app';
+	protected $baseUrl = '';
 
 	/**
 	 * Creates the application.
