@@ -16,7 +16,7 @@ class ThemeTest extends TestCase {
 
     public function testGetActiveTheme()
     {
-        $this->theme->setTheme('test-theme');
+        $this->theme->set('test-theme');
 
         $this->assertEquals('test-theme', $this->theme->get()->getNamespace());
     }
@@ -30,7 +30,7 @@ class ThemeTest extends TestCase {
     public function testSetTheme()
     {
         $this->setExpectedException('Karlomikus\Theme\Exceptions\ThemeNotFoundException');
-        $this->theme->setTheme('throw-exception');
+        $this->theme->set('throw-exception');
     }
 
     public function testThemeExists()

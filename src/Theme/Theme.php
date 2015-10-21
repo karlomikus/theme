@@ -63,7 +63,7 @@ class Theme {
      * @param string $theme Theme namespace
      * @throws ThemeNotFoundException
      */
-    public function setTheme($theme)
+    public function set($theme)
     {
         if (!$this->themeExists($theme)) {
             throw new ThemeNotFoundException($theme);
