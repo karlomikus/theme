@@ -166,7 +166,7 @@ class Theme {
             $json = $themePath . '/theme.json';
 
             if (file_exists($json)) {
-                fwrite(STDERR, print_r($json, TRUE));
+                //fwrite(STDERR, print_r($json, TRUE));
                 $contents = file_get_contents($json);
                 if (!$contents === false) {
                     $th = $this->parseThemeInfo(json_decode($contents, true));
