@@ -14,16 +14,19 @@ $ composer require karlomikus/theme
 Or add the package to your composer file:
 
 ``` json
-"karlomikus/theme": "dev-master"
+"karlomikus/theme": "1.*"
 ```
 
-Next add new service provider to your `config/app.php` file:
+Next add new service provider and facade to your `config/app.php` file:
 
 ``` php
+// Service provider
 Karlomikus\Theme\ThemeServiceProvider::class
+// Facade
+'Theme' => Karlomikus\Theme\Facade\Theme::class
 ```
 
-Next you'll want to publish the config file:
+Next need to publish the config file:
 
 ``` bash
 $ php artisan vendor:publish
@@ -33,7 +36,7 @@ This will create a theme.php file in your config directory. There you can define
 
 ## Theme setup
 
-Create new folder in your themes directory (default: public/themes) and add new theme.json file.
+Create new folder in your themes directory (default: public/themes) and add views folder (which will hold all your custom views) and theme.json file:
 This file contains information about a specific theme.
 
 ``` json
@@ -104,4 +107,4 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## TODO
 
-None currently. Contact me, create pull request or create an issue if you have some ideas and critiques.
+- Artisan commands for theme management
