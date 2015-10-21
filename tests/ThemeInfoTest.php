@@ -4,7 +4,7 @@ class ThemeInfoTest extends TestCase {
 
 	public function testGetters()
 	{
-		$themeInfo = new \App\Libraries\Theme\ThemeInfo();
+		$themeInfo = new Karlomikus\Theme\ThemeInfo();
 		$themeInfo->setName('test-theme');
 		$themeInfo->setVersion('1.0');
 		$themeInfo->setNamespace('test');

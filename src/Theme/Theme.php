@@ -48,7 +48,7 @@ class Theme {
     {
         // Default themes path
         $this->basePath = config('theme.path');
-
+        
         // Config view finder
         $paths = $app['config']['view.paths'];
         $this->view = $app->make('view');
@@ -166,8 +166,8 @@ class Theme {
         foreach ($themeDirectories as $themePath) {
             $json = $themePath . '/theme.json';
 
-            if (File::exists($json)) {
-                $th = $this->parseThemeInfo(json_decode(File::get($json), true));
+            if (file_exists($json)) {
+                $th = $this->parseThemeInfo(json_decode(file_get_contents($json), true));
                 $themes[$th->getNamespace()] = $th;
             }
         }

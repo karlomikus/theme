@@ -21,7 +21,7 @@ class ThemeTest extends TestCase {
     public function testSetTheme()
     {
         $theme = $this->getTheme();
-        $this->setExpectedException('\App\Libraries\Theme\Exceptions\ThemeNotFoundException');
+        $this->setExpectedException('Karlomikus\Theme\Exceptions\ThemeNotFoundException');
         $theme->setTheme('throw-exception');
     }
 
@@ -35,8 +35,8 @@ class ThemeTest extends TestCase {
 
     private function getTheme()
     {
-        $theme = new \App\Libraries\Theme\Theme($this->createApplication());
-        $theme->setDefaultThemePath(realpath(base_path('tests/stubs')));
+        $theme = new Karlomikus\Theme\Theme($this->app);
+        $theme->setDefaultThemePath(__DIR__ . '/stubs');
 
         return $theme;
     }

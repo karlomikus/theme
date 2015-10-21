@@ -2,6 +2,12 @@
 
 class ThemeViewFinderTest extends TestCase {
 
+    public function tearDown()
+    {
+        parent::tearDown();
+        Mockery::close();
+    }
+
     public function testPathPrepend()
     {
         $finder = $this->getFinder();
@@ -22,8 +28,8 @@ class ThemeViewFinderTest extends TestCase {
 
     private function getFinder()
     {
-        $app = $this->createApplication();
-        $finder  = new \App\Libraries\Theme\ThemeViewFinder($app['files'], ['test/path']);
+        $files = Mockery::mock('Illuminate\Filesystem\Filesystem');
+        $finder  = new Karlomikus\Theme\ThemeViewFinder($files, ['test/path']);
 
         return $finder;
     }
