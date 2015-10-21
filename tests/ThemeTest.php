@@ -37,6 +37,7 @@ class ThemeTest extends TestCase {
     {
         $theme = new Karlomikus\Theme\Theme($this->app);
         $theme->setDefaultThemePath(__DIR__ . '/stubs');
+        dd($theme->getThemes());
 
         return $theme;
     }
