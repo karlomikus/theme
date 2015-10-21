@@ -6,7 +6,7 @@ use Illuminate\View\FileViewFinder;
 /**
  * Theme view finder
  *
- * @package App\Libraries\Theme
+ * @package Karlomikus\Theme
  */
 class ThemeViewFinder extends FileViewFinder {
 
