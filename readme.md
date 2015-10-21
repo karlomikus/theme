@@ -69,12 +69,37 @@ view('home');
 This will firstly check if there is a home.blade.php in current theme directory.
 If none is found then it checks parent theme, and finally falls back to default laravel views location.
 
+## Available methods
+
+Activate/set theme
+``` php
+Theme::set('theme-namespace');
+```
+
+Get all available themes as an array:
+``` php
+Theme::getThemes();
+```
+
+Get currently active theme:
+``` php
+Theme::get();
+```
+
+Override default theme path:
+``` php
+Theme::setDefaultThemePath('new/path/to/themes');
+```
+
+Check if theme exists:
+``` php
+Theme::themeExists('theme-namespace');
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## TODO
 
-- Remove dependency on file facade
-- Fix tests to work
-- Theme assets loading
+None currently. Contact me, create pull request or create an issue if you have some ideas and critiques.
