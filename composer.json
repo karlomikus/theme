@@ -15,8 +15,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "~5.0"
+        "php": ">=5.5.9"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
@@ -24,11 +23,13 @@
         "orchestra/testbench": "3.0.*"
     },
     "autoload": {
-        "classmap": [
-            "tests/"
-        ],
         "psr-4": {
             "Karlomikus\\Theme\\": "src/Theme"
         }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
     }
 }
