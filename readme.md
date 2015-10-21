@@ -26,18 +26,18 @@ Karlomikus\Theme\ThemeServiceProvider::class
 'Theme' => Karlomikus\Theme\Facade\Theme::class
 ```
 
-Next need to publish the config file:
+Next you need to publish the config file:
 
 ``` bash
 $ php artisan vendor:publish
 ```
 
-This will create a theme.php file in your config directory. There you can define your default path to themes directory.
+This will create a theme.php file in your config directory in which you can define your default path to themes directory.
 
 ## Theme setup
 
-Create new folder in your themes directory (default: public/themes) and add views folder (which will hold all your custom views) and theme.json file:
-This file contains information about a specific theme.
+Create new folder in your themes directory (default: public/themes) and add views folder (which will hold all your custom views)
+and theme.json file (contains information about a theme).
 
 ``` json
 {
@@ -50,10 +50,10 @@ This file contains information about a specific theme.
 }
 ```
 
-This are all available attributes, but the required ones only inculude: `name`, `author` and `namespace`.
-Value of attribute `namespace` must be the name of the theme's folder name.
+This are all available attributes, but the required ones only include: `name`, `author` and `namespace`.
+Value of `namespace` must be the name of the theme's folder.
 
-If want your theme to depend on other theme views, just include a parent theme namespace in `parent` attribute.
+If you want your theme to depend on other theme views, just include a parent theme namespace in `parent` attribute.
 
 ## Usage
 
