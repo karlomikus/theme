@@ -1,6 +1,8 @@
 # Laravel Theme
 
 [![Build Status](https://travis-ci.org/karlomikus/theme.svg?branch=master)](https://travis-ci.org/karlomikus/theme)
+[![Latest Stable Version](https://poser.pugx.org/karlomikus/theme/v/stable)](https://packagist.org/packages/karlomikus/theme)
+[![License](https://poser.pugx.org/karlomikus/theme/license)](https://packagist.org/packages/karlomikus/theme)
 
 Add theming support to your Laravel 5.* projects.
 
