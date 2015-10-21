@@ -3,7 +3,6 @@ namespace Karlomikus\Theme;
 
 use Karlomikus\Theme\Exceptions\ThemeNotFoundException;
 use Illuminate\Contracts\Container\Container;
-use File;
 use Karlomikus\Theme\Exceptions\ThemeInfoAttributeException;
 
 /**
