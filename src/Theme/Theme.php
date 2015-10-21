@@ -166,8 +166,12 @@ class Theme {
             $json = $themePath . '/theme.json';
 
             if (file_exists($json)) {
-                $th = $this->parseThemeInfo(json_decode(file_get_contents($json), true));
-                $themes[$th->getNamespace()] = $th;
+                fwrite(STDERR, print_r($json, TRUE));
+                $contents = file_get_contents($json);
+                if (!$contents === false) {
+                    $th = $this->parseThemeInfo(json_decode($contents, true));
+                    $themes[$th->getNamespace()] = $th;
+                }
             }
         }
 
