@@ -2,6 +2,7 @@
 namespace Karlomikus\Theme;
 
 use Illuminate\Support\ServiceProvider;
+use Karlomikus\Theme\Commands\ThemeListCommand;
 
 class ThemeServiceProvider extends ServiceProvider {
 
@@ -10,6 +11,10 @@ class ThemeServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__.'/config/theme.php' => config_path('theme.php'),
         ]);
+
+        $this->app->bind('command.theme.list', function ($app) {
+            return new ThemeListCommand($app);
+        });
 
         $this->app->bind('theme', function($app) {
             return new Theme($app);

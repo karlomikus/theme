@@ -6,6 +6,13 @@
 
 Add theming support to your Laravel 5.* projects.
 
+### Features
+
+- Custom theme locations
+- Support for theme inheritence with theme fallback
+- Theme assets loading
+- Artisan console commands
+
 ## Install
 
 Require it via terminal like so:
