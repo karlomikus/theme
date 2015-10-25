@@ -52,8 +52,8 @@ class ThemeListCommand extends Command {
 
         $output = [];
         foreach ($themes as $theme) {
-            $output[]['Name'] = $theme->name;
-            $output[]['Author'] = $theme->author;
+            $output[]['Name'] = $theme->getName();
+            $output[]['Author'] = $theme->getAuthor();
         }
 
         $this->table($headers, $output);
