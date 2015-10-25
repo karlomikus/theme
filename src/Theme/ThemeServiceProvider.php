@@ -12,12 +12,14 @@ class ThemeServiceProvider extends ServiceProvider {
             __DIR__.'/config/theme.php' => config_path('theme.php'),
         ]);
 
-        $this->app->bind('command.theme.list', function ($app) {
-            return new ThemeListCommand($app);
-        });
-
         $this->app->bind('theme', function($app) {
             return new Theme($app);
         });
+
+        $this->app->bind('command.theme.list', function ($app) {
+            return new ThemeListCommand($app['theme']);
+        });
+
+        $this->commands('command.theme.list');
     }
 }

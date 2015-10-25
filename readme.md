@@ -110,10 +110,27 @@ Check if theme exists:
 Theme::themeExists('theme-namespace');
 ```
 
+### Artisan commands
+
+Get a table of all found themes:
+``` bash
+$ php artisan theme:list
+
++------------------+-------------+------------+
+| Name             | Author      | Namespace  |
++------------------+-------------+------------+
+| Bootstrap theme  | Karlo Mikus | bootstrap  |
+| Default theme    | Test Author | default    |
+| Foundation theme | Lorem Ipsum | foundation |
+| Test theme       | Dolor Sitha | test       |
++------------------+-------------+------------+
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## TODO
 
+- Assets loading
 - Artisan commands for theme management

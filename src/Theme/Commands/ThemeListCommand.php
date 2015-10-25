@@ -48,12 +48,15 @@ class ThemeListCommand extends Command {
     public function handle()
     {
         $themes = $this->theme->getThemes();
-        $headers = ['Name', 'Author'];
+        $headers = ['Name', 'Author', 'Namespace'];
 
         $output = [];
         foreach ($themes as $theme) {
-            $output[]['Name'] = $theme->getName();
-            $output[]['Author'] = $theme->getAuthor();
+            $output[] = [
+                'Name' => $theme->getName(),
+                'Author' => $theme->getAuthor(),
+                'Namespace' => $theme->getNamespace()
+            ];
         }
 
         $this->table($headers, $output);
