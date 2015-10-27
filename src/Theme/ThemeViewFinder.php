@@ -8,8 +8,8 @@ use Illuminate\View\FileViewFinder;
  *
  * @package Karlomikus\Theme
  */
-class ThemeViewFinder extends FileViewFinder {
-
+class ThemeViewFinder extends FileViewFinder
+{
     /**
      * Set paths
      *
@@ -29,5 +29,4 @@ class ThemeViewFinder extends FileViewFinder {
     {
         array_unshift($this->paths, $path);
     }
-
 }

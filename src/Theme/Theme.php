@@ -12,8 +12,8 @@ use Karlomikus\Theme\Exceptions\ThemeInfoAttributeException;
  * @version 0.0.1
  * @package Karlomikus\Theme
  */
-class Theme {
-
+class Theme
+{
     /**
      * Scanned themes
      * @var array|ThemeInfo[]
@@ -47,7 +47,7 @@ class Theme {
     {
         // Default themes path
         $this->basePath = config('theme.path');
-        
+
         // Config view finder
         $paths = $app['config']['view.paths'];
         $this->view = $app->make('view');
@@ -83,13 +83,18 @@ class Theme {
     }
 
     /**
-     * Return currently active theme
+     * Returns theme information.
      *
+     * @param string Theme namespace
      * @return null|ThemeInfo
      */
-    public function get()
+    public function get($theme = null)
     {
-        return $this->themes[$this->activeTheme];
+        if (is_null($theme)) {
+            return $this->themes[$this->activeTheme];
+        }
+
+        return $this->themes[$theme];
     }
 
     /**
@@ -122,8 +127,9 @@ class Theme {
      */
     private function loadTheme($theme)
     {
-        if (!isset($theme))
+        if (!isset($theme)) {
             return;
+        }
 
         $th = $this->findThemeByNamespace($theme);
 
@@ -131,8 +137,9 @@ class Theme {
             $viewFinder = $this->view->getFinder();
 
             $viewFinder->prependPath($th->getPath());
-            if (!is_null($th->getParent()))
+            if (!is_null($th->getParent())) {
                 $this->loadTheme($th->getParent());
+            }
 
             $this->activeTheme = $theme;
         }
@@ -146,8 +153,9 @@ class Theme {
      */
     private function findThemeByNamespace($namespace)
     {
-        if (isset($this->themes[$namespace]))
+        if (isset($this->themes[$namespace])) {
             return $this->themes[$namespace];
+        }
 
         return null;
     }
@@ -207,24 +215,27 @@ class Theme {
 
         $required = ['name', 'author', 'namespace'];
         foreach ($required as $key) {
-            if (!array_key_exists($key, $info))
+            if (!array_key_exists($key, $info)) {
                 throw new ThemeInfoAttributeException($key);
+            }
         }
 
         $themeInfo->setName($info['name']);
         $themeInfo->setAuthor($info['author']);
-        $themeInfo->setNamespace($info['namespace']);
+        $themeInfo->setNamespace(strtolower($info['namespace']));
 
-        if (isset($info['description']))
+        if (isset($info['description'])) {
             $themeInfo->setDescription($info['description']);
-        if (isset($info['version']))
+        }
+        if (isset($info['version'])) {
             $themeInfo->setVersion($info['version']);
-        if (isset($info['parent']))
+        }
+        if (isset($info['parent'])) {
             $themeInfo->setParent($info['parent']);
+        }
 
         $themeInfo->setPath($this->findPath($info['namespace']));
 
         return $themeInfo;
     }
-
 }

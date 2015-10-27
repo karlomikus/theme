@@ -1,8 +1,8 @@
 <?php
 namespace Karlomikus\Theme;
 
-class ThemeInfo {
-
+class ThemeInfo
+{
     /**
      * Theme name
      * @var string
@@ -124,8 +124,9 @@ class ThemeInfo {
      */
     public function setVersion($version)
     {
-        if (!isset($author))
+        if (!isset($author)) {
             $this->version = 'n/a';
+        }
 
         $this->version = $version;
     }
@@ -143,8 +144,9 @@ class ThemeInfo {
      */
     public function setDescription($description)
     {
-        if (!isset($author))
+        if (!isset($author)) {
             $this->version = 'n/a';
+        }
 
         $this->description = $description;
     }
@@ -168,9 +170,8 @@ class ThemeInfo {
     /**
      * @return string
      */
-    function __toString()
+    public function __toString()
     {
         return "Theme: $this->name";
     }
-
 }
