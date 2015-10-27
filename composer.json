@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "Karlomikus\\Theme\\": "src/Theme"
-        }
+        },
+        "classmap": [
+            "src/Theme/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
