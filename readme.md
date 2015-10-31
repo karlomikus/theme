@@ -83,31 +83,35 @@ view('home');
 This will firstly check if there is a home.blade.php in current theme directory.
 If none is found then it checks parent theme, and finally falls back to default laravel views location.
 
+### Theme path
+
+You can set default path to themes folder in config/theme.php file. Please note that currently themes folder must be somewhere inside public folder.
+
 ## Available methods
 
-Activate/set theme
+Here's the list of methods you can access:
+
 ``` php
+// Activate/set theme
 Theme::set('theme-namespace');
-```
 
-Get all available themes as an array:
-``` php
-Theme::getThemes();
-```
+// Get all available themes as an array
+Theme::all();
 
-Get currently active theme:
-``` php
+// Get currently active
 Theme::get();
-```
 
-Override default theme path:
-``` php
+// Get theme by namespace
+Theme::get('specific-namespace');
+
+// Override default theme path
 Theme::setDefaultThemePath('new/path/to/themes');
-```
 
-Check if theme exists:
-``` php
-Theme::themeExists('theme-namespace');
+// Check if theme exists
+Theme::has('theme-namespace');
+
+// Render theme path URL
+theme_url('assets/style.css');
 ```
 
 ### Artisan commands
@@ -126,11 +130,23 @@ $ php artisan theme:list
 +------------------+-------------+------------+
 ```
 
+Create a theme directory with config file:
+``` bash
+$ php artisan theme:make
+
+ Template name:
+ > Theme name
+
+ Template author:
+ > Firstn Lastn
+
+Theme created succesfully!
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## TODO
 
-- Assets loading
-- Artisan commands for theme management
+- Contact me for ideas
