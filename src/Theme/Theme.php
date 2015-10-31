@@ -65,7 +65,7 @@ class Theme
      */
     public function set($theme)
     {
-        if (!$this->themeExists($theme)) {
+        if (!$this->has($theme)) {
             throw new ThemeNotFoundException($theme);
         }
 
@@ -77,7 +77,7 @@ class Theme
      *
      * @return array|ThemeInfo[]
      */
-    public function getThemes()
+    public function all()
     {
         return $this->themes;
     }
@@ -103,7 +103,7 @@ class Theme
      * @param $theme
      * @return bool
      */
-    public function themeExists($theme)
+    public function has($theme)
     {
         return array_key_exists($theme, $this->themes);
     }

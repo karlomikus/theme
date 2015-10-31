@@ -47,7 +47,7 @@ class ThemeListCommand extends Command
      */
     public function handle()
     {
-        $themes = $this->theme->getThemes();
+        $themes = $this->theme->all();
         $headers = ['Name', 'Author', 'Namespace'];
 
         $output = [];

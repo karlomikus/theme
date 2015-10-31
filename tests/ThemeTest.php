@@ -23,8 +23,8 @@ class ThemeTest extends TestCase {
 
     public function testGetAllThemes()
     {
-        $this->assertArrayHasKey('test-theme', $this->theme->getThemes());
-        $this->assertArrayHasKey('parent-theme', $this->theme->getThemes());
+        $this->assertArrayHasKey('test-theme', $this->theme->all());
+        $this->assertArrayHasKey('parent-theme', $this->theme->all());
     }
 
     public function testSetTheme()
@@ -35,8 +35,8 @@ class ThemeTest extends TestCase {
 
     public function testThemeExists()
     {
-        $this->assertNotTrue($this->theme->themeExists('test-false'));
-        $this->assertTrue($this->theme->themeExists('test-theme'));
+        $this->assertNotTrue($this->theme->has('test-false'));
+        $this->assertTrue($this->theme->has('test-theme'));
     }
 
 }
