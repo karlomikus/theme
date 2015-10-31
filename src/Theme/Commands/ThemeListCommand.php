@@ -29,15 +29,12 @@ class ThemeListCommand extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @param  Theme $theme
-     * @return void
      */
-    public function __construct(Theme $theme)
+    public function __construct()
     {
         parent::__construct();
 
-        $this->theme = $theme;
+        $this->theme = $this->laravel['theme'];
     }
 
     /**

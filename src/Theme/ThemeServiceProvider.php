@@ -8,6 +8,8 @@ class ThemeServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        require __DIR__.'/helpers.php';
+
         $this->publishes([
             __DIR__ . '/config/theme.php' => config_path('theme.php'),
         ]);
@@ -16,10 +18,16 @@ class ThemeServiceProvider extends ServiceProvider
             return new Theme($app);
         });
 
-        $this->app->bind('command.theme.list', function ($app) {
-            return new ThemeListCommand($app['theme']);
-        });
+        $this->commands(ThemeListCommand::class);
+    }
 
-        $this->commands('command.theme.list');
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['theme'];
     }
 }

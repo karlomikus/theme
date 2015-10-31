@@ -26,7 +26,7 @@
         "psr-4": {
             "Karlomikus\\Theme\\": "src/Theme"
         },
-        "classmap": [
+        "files": [
             "src/Theme/helpers.php"
         ]
     },
