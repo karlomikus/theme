@@ -1,0 +1,8 @@
+{
+  "name": "$NAME$",
+  "namespace": "$NAMESPACE$",
+  "author": "$AUTHOR$",
+  "version": "$VERSION$",
+  "parent": "$PARENT$",
+  "description": "$DESCRIPTION$"
+}

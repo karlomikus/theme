@@ -28,23 +28,13 @@ class ThemeListCommand extends Command
     protected $theme;
 
     /**
-     * Create a new command instance.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->theme = $this->laravel['theme'];
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
      */
     public function handle()
     {
-        $themes = $this->theme->all();
+        $themes = $this->laravel['theme']->all();
         $headers = ['Name', 'Author', 'Namespace'];
 
         $output = [];
