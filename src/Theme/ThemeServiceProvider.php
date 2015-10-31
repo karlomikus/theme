@@ -3,6 +3,7 @@ namespace Karlomikus\Theme;
 
 use Illuminate\Support\ServiceProvider;
 use Karlomikus\Theme\Commands\ThemeListCommand;
+use Karlomikus\Theme\Commands\ThemeMakeCommand;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,7 @@ class ThemeServiceProvider extends ServiceProvider
         });
 
         $this->commands(ThemeListCommand::class);
+        $this->commands(ThemeMakeCommand::class);
     }
 
     /**
