@@ -8,13 +8,16 @@ class ThemeServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        require __DIR__.'/helpers.php';
+        require __DIR__ . '/helpers.php';
 
         $this->publishes([
             __DIR__ . '/config/theme.php' => config_path('theme.php'),
         ]);
+    }
 
-        $this->app->bind('theme', function ($app) {
+    public function registerCore()
+    {
+        $this->app['theme'] = $this->app->share(function ($app) {
             return new Theme($app);
         });
 
