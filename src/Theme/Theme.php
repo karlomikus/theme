@@ -83,6 +83,14 @@ class Theme
     }
 
     /**
+     * @depracted Use all() method
+     */
+    public function getThemes()
+    {
+        return $this->all();
+    }
+
+    /**
      * Returns theme information.
      *
      * @param string Theme namespace
@@ -106,6 +114,14 @@ class Theme
     public function has($theme)
     {
         return array_key_exists($theme, $this->themes);
+    }
+
+    /**
+     * @depracted Use has() method
+     */
+    public function themeExists($theme)
+    {
+        return $this->has($theme);
     }
 
     /**
