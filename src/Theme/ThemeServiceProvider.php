@@ -4,6 +4,8 @@ namespace Karlomikus\Theme;
 use Illuminate\Support\ServiceProvider;
 use Karlomikus\Theme\Commands\ThemeListCommand;
 use Karlomikus\Theme\Commands\ThemeMakeCommand;
+use Karlomikus\Theme\Contracts\ThemeInterface;
+use Karlomikus\Theme\Theme;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -20,9 +22,7 @@ class ThemeServiceProvider extends ServiceProvider
 
     public function registerCore()
     {
-        $this->app['theme'] = $this->app->share(function ($app) {
-            return new Theme($app);
-        });
+        $this->app->bind(ThemeInterface::class, Theme::class);
 
         $this->commands(ThemeListCommand::class);
         $this->commands(ThemeMakeCommand::class);

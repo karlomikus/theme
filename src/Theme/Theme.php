@@ -222,7 +222,7 @@ class Theme implements ThemeInterface
      * Parse theme json file
      *
      * @param array $info
-     * @return ThemeInfo
+     * @return ThemeInfoInterface
      * @throws ThemeInfoAttributeException
      */
     private function parseThemeInfo(array $info)
