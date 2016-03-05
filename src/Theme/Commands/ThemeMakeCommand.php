@@ -50,7 +50,7 @@ class ThemeMakeCommand extends COmmand
         $name = $this->ask('Template name');
         $author = $this->ask('Template author');
 
-        $this->makeThemeFolder($themeNamespace);
+        $this->makeThemeFolder();
         $this->makeThemeConfig($name, $author);
 
         $this->info('Theme created succesfully!');

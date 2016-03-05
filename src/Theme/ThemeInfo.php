@@ -124,13 +124,12 @@ class ThemeInfo implements ThemeInfoInterface
     /**
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion($version = null)
     {
-        if (!isset($author)) {
+        $this->version = $version;
+        if (!isset($version)) {
             $this->version = 'n/a';
         }
-
-        $this->version = $version;
     }
 
     /**
@@ -144,13 +143,12 @@ class ThemeInfo implements ThemeInfoInterface
     /**
      * @param null|string $description
      */
-    public function setDescription($description)
+    public function setDescription($description = null)
     {
-        if (!isset($author)) {
-            $this->version = 'n/a';
-        }
-
         $this->description = $description;
+        if (!isset($description)) {
+            $this->description = 'n/a';
+        }
     }
 
     /**
