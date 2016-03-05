@@ -4,15 +4,16 @@ namespace Karlomikus\Theme;
 use Karlomikus\Theme\Exceptions\ThemeNotFoundException;
 use Illuminate\Contracts\Container\Container;
 use Karlomikus\Theme\Exceptions\ThemeInfoAttributeException;
+use Karlomikus\Theme\Contracts\ThemeInterface;
 
 /**
  * Theme
  *
  * @author Karlo Mikuš
- * @version 0.0.1
+ * @version 1.0.2
  * @package Karlomikus\Theme
  */
-class Theme
+class Theme implements ThemeInterface
 {
     /**
      * Scanned themes
@@ -190,7 +191,6 @@ class Theme
             $json = $themePath . '/theme.json';
 
             if (file_exists($json)) {
-                //fwrite(STDERR, print_r($json, TRUE));
                 $contents = file_get_contents($json);
                 if (!$contents === false) {
                     $th = $this->parseThemeInfo(json_decode($contents, true));

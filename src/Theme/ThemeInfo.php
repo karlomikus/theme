@@ -1,7 +1,9 @@
 <?php
 namespace Karlomikus\Theme;
 
-class ThemeInfo
+use Karlomikus\Theme\Contracts\ThemeInfoInterface;
+
+class ThemeInfo implements ThemeInfoInterface
 {
     /**
      * Theme name
