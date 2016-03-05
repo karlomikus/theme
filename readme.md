@@ -83,6 +83,19 @@ view('home');
 This will firstly check if there is a home.blade.php in current theme directory.
 If none is found then it checks parent theme, and finally falls back to default laravel views location.
 
+You can also inject theme instance using ThemeInterface.
+
+``` php
+use Karlomikus\Theme\Contracts\ThemeInterface;
+
+private $theme;
+
+public function __construct(ThemeInterface $theme)
+{
+    $this->theme = $theme
+}
+```
+
 ### Theme path
 
 You can set default path to themes folder in config/theme.php file. Please note that currently themes folder must be somewhere inside public folder.
