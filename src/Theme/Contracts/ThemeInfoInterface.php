@@ -16,10 +16,10 @@ interface ThemeInfoInterface
     public function setNamespace($namespace);
 
     public function getVersion();
-    public function setVersion($version);
+    public function setVersion($version = null);
 
     public function getDescription();
-    public function setDescription($description);
+    public function setDescription($description = null);
 
     public function getParent();
     public function setParent($parent);
