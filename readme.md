@@ -64,6 +64,16 @@ Value of `namespace` must be the name of the theme's folder.
 
 If you want your theme to depend on other theme views, just include a parent theme namespace in `parent` attribute.
 
+Example folder structure:
+
+```
+- public/
+    - themes/
+        - theme-1/
+            - views/
+            - theme.json
+```
+
 ## Usage
 
 The library will firstly check all available valid themes in theme directory.
