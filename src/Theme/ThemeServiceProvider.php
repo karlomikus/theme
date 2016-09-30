@@ -1,11 +1,11 @@
 <?php
 namespace Karlomikus\Theme;
 
+use Karlomikus\Theme\Theme;
 use Illuminate\Support\ServiceProvider;
+use Karlomikus\Theme\Contracts\ThemeInterface;
 use Karlomikus\Theme\Commands\ThemeListCommand;
 use Karlomikus\Theme\Commands\ThemeMakeCommand;
-use Karlomikus\Theme\Contracts\ThemeInterface;
-use Karlomikus\Theme\Theme;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -22,7 +22,7 @@ class ThemeServiceProvider extends ServiceProvider
 
     public function registerCore()
     {
-        $this->app->bind(ThemeInterface::class, Theme::class);
+        $this->app->singleton(ThemeInterface::class, Theme::class);
 
         $this->commands(ThemeListCommand::class);
         $this->commands(ThemeMakeCommand::class);

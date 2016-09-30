@@ -1,5 +1,7 @@
 <?php
 
+use Karlomikus\Theme\Contracts\ThemeInterface;
+
 if (!function_exists('theme_url')) {
     /**
      * Generate an theme path url for the application.
@@ -10,7 +12,7 @@ if (!function_exists('theme_url')) {
      */
     function theme_url($path, $secure = null)
     {
-        $currentTheme = app('Karlomikus\Theme\Contracts\ThemeInterface')->get()->getNamespace();
+        $currentTheme = app(ThemeInterface::class)->get()->getNamespace();
 
         return app('url')->asset('themes' . DIRECTORY_SEPARATOR . $currentTheme . DIRECTORY_SEPARATOR . $path, $secure);
     }
