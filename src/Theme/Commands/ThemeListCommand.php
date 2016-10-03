@@ -2,7 +2,7 @@
 namespace Karlomikus\Theme\Commands;
 
 use Illuminate\Console\Command;
-use Karlomikus\Theme\Theme;
+use Karlomikus\Theme\Contracts\ThemeInterface;
 
 class ThemeListCommand extends Command
 {
@@ -21,20 +21,13 @@ class ThemeListCommand extends Command
     protected $description = 'List all available themes';
 
     /**
-     * Theme service.
-     *
-     * @var Theme
-     */
-    protected $theme;
-
-    /**
      * Execute the console command.
      *
      * @return mixed
      */
     public function handle()
     {
-        $themes = $this->laravel['theme']->all();
+        $themes = $this->laravel[ThemeInterface::class]->all();
         $headers = ['Name', 'Author', 'Namespace'];
 
         $output = [];
