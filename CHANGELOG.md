@@ -2,7 +2,11 @@
 
 All Notable changes to `karlomikus\theme` will be documented in this file
 
-## v 1.0.3 - 2016-10-30
+## v 1.0.4 - 2016-10-03
+
+- Fixed theme:list command not working
+
+## v 1.0.3 - 2016-09-30
 
 - Fixed issue with container binding (changed binding to a singleton)
 
