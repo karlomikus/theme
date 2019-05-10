@@ -2,7 +2,7 @@
 
 class ThemeViewFinderTest extends TestCase {
 
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
         Mockery::close();

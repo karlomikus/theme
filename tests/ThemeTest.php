@@ -4,7 +4,7 @@ class ThemeTest extends TestCase {
 
     private $theme;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -29,7 +29,7 @@ class ThemeTest extends TestCase {
 
     public function testSetTheme()
     {
-        $this->setExpectedException('Karlomikus\Theme\Exceptions\ThemeNotFoundException');
+        $this->expectException('Karlomikus\Theme\Exceptions\ThemeNotFoundException');
         $this->theme->set('throw-exception');
     }
 
