@@ -58,7 +58,7 @@ class ThemeMakeCommand extends COmmand
 
     private function makeThemeFolder()
     {
-        $file = new File;
+        $file = new File();
         $location = config('theme.path');
         $path = $location . DIRECTORY_SEPARATOR . $this->themeNamespace;
 
@@ -72,7 +72,7 @@ class ThemeMakeCommand extends COmmand
 
     private function makeThemeConfig($name, $author)
     {
-        $file = new File;
+        $file = new File();
         $location = config('theme.path');
         $path = $location . DIRECTORY_SEPARATOR . $this->themeNamespace . '/theme.json';
 
