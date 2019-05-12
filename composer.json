@@ -34,5 +34,15 @@
         "classmap": [
             "tests/"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Karlomikus\\Theme\\ThemeServiceProvider"
+            ],
+            "aliases": {
+                "Theme": "Karlomikus\\Theme\\Facade\\Theme"
+            }
+        }
     }
 }
